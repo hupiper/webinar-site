@@ -7,7 +7,7 @@ metadata:
 parameters:
   - name: NAME
     description: >-
-      Image name. Image will be published to iimage-registry.openshift-image-registry.svc:5000/infra/${NAME}:${TAG}
+      Image name. Image will be published to image-registry.openshift-image-registry.svc:5000/infra/${NAME}:${TAG}
     required: true
   - name: TAG
     description: Image tag

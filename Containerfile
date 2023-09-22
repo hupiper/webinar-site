@@ -11,8 +11,8 @@ RUN cd /tmp/src && \
 
 FROM ubi9/nginx-120
 
-COPY --from=builder --chown=default /opt/app-root/src/ /opt/app-root/src/
-COPY --from=builder --chown=default /tmp/src/nginx.conf /etc/nginx/nginx.conf
+COPY --chown=default /docs/ /opt/app-root/src/
+COPY --chown=default nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080
 

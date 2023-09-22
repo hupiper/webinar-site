@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webinar-site
+  name: webinar-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webinar-site
+  template:
+    metadata:
+      labels:
+        app: webinar-site
+    spec:
+      containers:
+        - image: quay.io/openshift-pipeline/vote-ui:latest
+          imagePullPolicy: Always
+          name: webinar-site
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          resources:
+                limits:
+                  cpu: 500m
+                  memory: 256Mi
+                requests:
+                  cpu: 200m
+                  memory: 64Mi

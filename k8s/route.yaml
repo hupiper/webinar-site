@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: webinar-site
+  name: webinar-site
+spec:
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: webinar-site
+    weight: 100

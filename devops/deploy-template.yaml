@@ -1,6 +1,9 @@
 ---
 apiVersion: template.openshift.io/v1
 kind: Template
+metadata:
+  name: deploy
+  namespace: webinar
 parameters:
   - name: name
     displayName: Name

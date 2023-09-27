@@ -15,7 +15,7 @@ spec:
         app: webinar-site
     spec:
       containers:
-        - image: quay.io/openshift-pipeline/vote-ui:latest
+        - image: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/webinar-site
           imagePullPolicy: Always
           name: webinar-site
           ports:

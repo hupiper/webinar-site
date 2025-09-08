@@ -20,7 +20,7 @@ spec:
         whenUnsatisfiable: DoNotSchedule
         labelSelector:
           matchLabels:
-            region: us-east-2
+            app: webinar-site
       containers:
         - image: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/webinar-site
           imagePullPolicy: Always
